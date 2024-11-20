@@ -39,7 +39,7 @@ Java 17+ and Maven installed
 Node.js and npm installed
 Postman or equivalent for API testing
 
-**git clone**
+**git clone https://github.com/dianaefimova/Edu-hub.git**
 **cd Edu-hub**
 **Run EduHubApplication**
 **cd frontend-pakki-vite**
