@@ -1,0 +1,162 @@
+[
+  {
+    "id": "101",
+    "courseName": "Introduction to Programming",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Smith",
+    "schedule": "Monday 10:00-12:00"
+  },
+  {
+    "id": "102",
+    "courseName": "Data Structures",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Jones",
+    "schedule": "Wednesday 14:00-16:00"
+  },
+  {
+    "id": "103",
+    "courseName": "Algorithms",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Brown",
+    "schedule": "Friday 10:00-12:00"
+  },
+  {
+    "id": "104",
+    "courseName": "Software Engineering",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. White",
+    "schedule": "Tuesday 10:00-12:00"
+  },
+  {
+    "id": "105",
+    "courseName": "Database Management",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Taylor",
+    "schedule": "Thursday 10:00-12:00"
+  },
+  {
+    "id": "106",
+    "courseName": "Operating Systems",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Lee",
+    "schedule": "Monday 14:00-16:00"
+  },
+  {
+    "id": "107",
+    "courseName": "Computer Networks",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Patel",
+    "schedule": "Wednesday 10:00-12:00"
+  },
+  {
+    "id": "108",
+    "courseName": "Web Development",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Kim",
+    "schedule": "Friday 14:00-16:00"
+  },
+  {
+    "id": "109",
+    "courseName": "Machine Learning",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Gupta",
+    "schedule": "Tuesday 14:00-16:00"
+  },
+  {
+    "id": "110",
+    "courseName": "Cloud Computing",
+    "degree": "Bachelor of Engineering in Software Engineering",
+    "credits": 5,
+    "teacher": "Prof. Nguyen",
+    "schedule": "Thursday 14:00-16:00"
+  },
+  {
+    "id": "201",
+    "courseName": "Environmental Science",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Green",
+    "schedule": "Monday 10:00-12:00"
+  },
+  {
+    "id": "202",
+    "courseName": "Ecology",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Flora",
+    "schedule": "Wednesday 14:00-16:00"
+  },
+  {
+    "id": "203",
+    "courseName": "Hydrology",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Rivers",
+    "schedule": "Friday 10:00-12:00"
+  },
+  {
+    "id": "204",
+    "courseName": "Environmental Chemistry",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Waters",
+    "schedule": "Tuesday 10:00-12:00"
+  },
+  {
+    "id": "205",
+    "courseName": "Geology",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Stones",
+    "schedule": "Thursday 10:00-12:00"
+  },
+  {
+    "id": "206",
+    "courseName": "Air Quality Management",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Sky",
+    "schedule": "Monday 14:00-16:00"
+  },
+  {
+    "id": "207",
+    "courseName": "Soil Science",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Earth",
+    "schedule": "Wednesday 10:00-12:00"
+  },
+  {
+    "id": "208",
+    "courseName": "Water Treatment",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Aqua",
+    "schedule": "Friday 14:00-16:00"
+  },
+  {
+    "id": "209",
+    "courseName": "Waste Management",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Recycle",
+    "schedule": "Tuesday 14:00-16:00"
+  },
+  {
+    "id": "210",
+    "courseName": "Environmental Law",
+    "degree": "Bachelor of Engineering in Environmental Engineering",
+    "credits": 5,
+    "teacher": "Prof. Justice",
+    "schedule": "Thursday 14:00-16:00"
+  }
+]
