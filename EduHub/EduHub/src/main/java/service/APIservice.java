@@ -32,7 +32,7 @@ public class APIservice {
         try {
             logReservations.info("Sending request to external API...");
             Mono<String> response = this.webClient.get()
-                    .uri("/f2aa48db-90d5-40f2-8579-9cce7974805a")
+                    .uri("/4f048e3a-052a-40cd-803e-296d54b99ed9")
                     .retrieve()
                     .bodyToMono(String.class);
             String result = response.block();

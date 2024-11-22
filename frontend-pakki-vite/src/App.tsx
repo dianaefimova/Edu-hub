@@ -17,6 +17,7 @@ import Grades from "./pages/Grades";
 import Enrollments from "./pages/Enrollments";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
+import Explore from "./pages/Degrees.tsx";
 import ThemeToggleButton from "./components/ThemeToggleButton";
 import { UserProvider } from "./context/UserContext";
 import Reservations from "./pages/reservations";
@@ -159,6 +160,16 @@ function App() {
                   >
                     Reservations
                   </Button>
+                  <Button
+                      as={Link}
+                      to="/explore"
+                      colorScheme="brand"
+                      variant="ghost"
+                      justifyContent="flex-start"
+                      w="100%"
+                  >
+                    Explore
+                  </Button>
                 </Stack>
               </Flex>
             )}
@@ -184,6 +195,7 @@ function App() {
             <Route path="/enrollments" element={<Enrollments />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/reservations" element={<Reservations />} />
+            <Route path="/explore" element={<Explore />} />
           </Routes>
         </Box>
       </Box>
