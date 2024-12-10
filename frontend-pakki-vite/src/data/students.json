@@ -10,10 +10,10 @@
     "credits": 90,
     "attendance": 1,
     "coursesCompleted": [
-      { "courseId": "101", "grade": 3 },
-      { "courseId": "102", "grade": 4 }
+      { "courseId": "SE101", "grade": 3 },
+      { "courseId": "SE102", "grade": 4 }
     ],
-    "coursesOngoing": ["103", "104"]
+    "coursesOngoing": ["SE103", "SE104"]
   },
   {
     "studentId": "654321",

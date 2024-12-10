@@ -23,7 +23,7 @@ const Degrees = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        axios.get<ApiData>('/public-api/degrees')
+        axios.get<ApiData>('https://eduhub-render.onrender.com/public-api/degrees')
             .then((response) => {
                 setApiData(response.data);
                 setLoading(false);

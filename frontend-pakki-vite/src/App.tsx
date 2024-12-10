@@ -14,7 +14,6 @@ import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom"
 import Home from "./pages/Home";
 import Curricula from "./pages/Curricula";
 import Grades from "./pages/Grades";
-import Enrollments from "./pages/Enrollments";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Explore from "./pages/Degrees.tsx";
@@ -24,7 +23,7 @@ import Reservations from "./pages/reservations";
 
 function App() {
   const { colorMode } = useColorMode();
-  const bgColor = { light: "white", dark: "gray.800" };
+  const bgColor = { light: "white", dark: "gray.900" };
   const navBgColor = bgColor[colorMode];
 
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Login state
@@ -132,16 +131,6 @@ function App() {
                   </Button>
                   <Button
                     as={Link}
-                    to="/enrollments"
-                    colorScheme="brand"
-                    variant="ghost"
-                    justifyContent="flex-start"
-                    w="100%"
-                  >
-                    Enrollments
-                  </Button>
-                  <Button
-                    as={Link}
                     to="/profile"
                     colorScheme="brand"
                     variant="ghost"
@@ -192,7 +181,6 @@ function App() {
             />
             <Route path="/curricula" element={<Curricula />} />
             <Route path="/grades" element={<Grades />} />
-            <Route path="/enrollments" element={<Enrollments />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/reservations" element={<Reservations />} />
             <Route path="/explore" element={<Explore />} />

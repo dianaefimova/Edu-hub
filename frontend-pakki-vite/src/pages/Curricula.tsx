@@ -30,13 +30,13 @@ const Curricula = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!isLoggedIn || user.userType !== 'student') {
+        if (!isLoggedIn || !user || user.userType !== 'student') {
             setError('Access restricted to students only.');
             setLoading(false);
             return;
         }
 
-        const studentId = user.studentId;
+        const studentId = (user as Student).studentId;
         const student = students.find((s) => s.studentId === studentId);
 
         if (!student) {
@@ -48,7 +48,7 @@ const Curricula = () => {
         const degreeProgramId = student.degreeProgramId;
 
         axios
-            .get<ApiData>('/public-api')
+            .get<ApiData>('https://eduhub-render.onrender.com/public-api')
             .then((response) => {
                 const matchingDegree = response.data.degrees.find(
                     (deg) => deg.id.toString() === degreeProgramId

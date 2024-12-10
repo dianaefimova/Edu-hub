@@ -4,6 +4,14 @@ EduHub is a web-based application designed to streamline the management of educa
 
 This project is developed as part of a **group collaboration**. The backend is implemented using Java Spring Boot, with RESTful API integration connecting to a TypeScript React-based frontend.
 
+The web platform can be viewd at https://eduhub-pakki.web.app/
+
+with test credentials:
+
+email: test@example.com 
+
+password: test123
+
 ## Features
 
 ### Curriculum and Degree Management

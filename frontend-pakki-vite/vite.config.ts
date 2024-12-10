@@ -1,16 +1,28 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      '/public-api': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false
+  build: {
+    outDir: 'dist',
+    assetsDir: '',
+    // Enable this to disable errors and warnings that cause build to stop
+    minify: false, // Optionally disable minification
+    sourcemap: false, // Disable source maps if they are causing issues
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // Ignore specific warnings by type or message
+        if (warning.code === 'UNUSED_EXTERNAL') {
+          // Ignore unused external dependency warnings
+          return;
+        }
+        warn(warning); // Log other warnings normally
       }
     }
-  }
+  },
+  server: {
+    open: true,
+  },
+  base: '/',
 });
+

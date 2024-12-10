@@ -4,7 +4,7 @@ import students from '../data/students.json';
 import teachers from '../data/teachers.json';
 
 // Define the types for Student and Teacher
-interface Student {
+export interface Student {
   studentId: string;
   email: string;
   password: string;

@@ -3,32 +3,59 @@ import {
   Box,
   Divider,
   Flex,
-  Grid,
-  GridItem,
   Heading,
   Text,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import { useUserContext } from "../context/UserContext";
-import degrees from "../data/degrees.json";
-import courses from "../data/courses.json";
+import { Student } from "../context/UserContext"; // Assuming you have a types file
+import { Course, Degree, fetchCourseName, getDegreeById } from '../utils/fetchDegrees';
+import { useEffect, useState } from 'react';
+
 
 const Grades: React.FC = () => {
   const { user } = useUserContext();
-  const userDegree = degrees.find((d) => d.id === user?.degreeProgramId);
+  const [loading, setLoading] = useState(true);
+  const [degree, setDegree] = useState<Degree | null>(null);
 
-  const getCourse = (courseId: string) => {
-    return courses.find((c) => c.id === courseId);
-  };
+  useEffect(() => {
+    // Fetch degree data for the user if they are a student
+    const fetchUserDegree = async () => {
+      if (user?.userType === 'student') {
+        setLoading(true);
+        try {
+          console.log(user.degreeProgramId);
+          const userDegree = await getDegreeById(Number(user.degreeProgramId));
+          console.log(user.degreeProgramId);
+          console.log('userDegree:', userDegree);
+          setDegree(userDegree);
+        } catch (error) {
+          console.error("Error fetching degree data:", error);
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+    fetchUserDegree();
+  }, [user]);
+
+  // const degree: Degree = await getDegreeById(user.degreeProgramId);
+  
+  // Type guard to ensure user is a Student
+  const isStudent = (user: any): user is Student => user?.userType === "student";
+
+  if (!isStudent(user)) {
+    return <Text>Please log in as a student to view your grades.</Text>;
+  }
 
   const getCourseStatus = (courseId: string) => {
-    const completedCourse = user?.coursesCompleted.find(
+    const completedCourse = user.coursesCompleted.find(
       (c) => c.courseId === courseId
     );
     if (completedCourse) return `Grade: ${completedCourse.grade}`;
-    if (user?.coursesOngoing.includes(courseId)) return "Ongoing";
-    return "";
+    if (user.coursesOngoing.includes(courseId)) return "Ongoing";
+    return "Not Started";
   };
 
   const textColor = useColorModeValue("brand.800", "brand.200");
@@ -42,23 +69,23 @@ const Grades: React.FC = () => {
       </Heading>
 
       <Text textAlign="left" fontSize="lg" fontWeight="semibold" color={textColor}>
-        {user?.name}
+        {user.name}
       </Text>
       <Text textAlign="left" fontSize="sm" color="gray.500">
-        Stuendt ID: {user?.studentId}
-        </Text>
+        Student ID: {user.studentId}
+      </Text>
 
-    <Text textAlign="left" fontSize="sm" color="gray.500" mb={4}>
-        {userDegree?.degreeName || "Degree Courses"}
-        </Text>
+      <Text textAlign="left" fontSize="sm" color="gray.500" mb={4}>
+        {"Degree Courses"}
+      </Text>
       <VStack spacing={4} align="stretch">
-        {userDegree?.courses.map((courseId, index) => {
-          const course = getCourse(courseId);
-          const courseStatus = getCourseStatus(courseId);
+        {degree && degree.curriculum.map((course, index) => {
+          const courseName = course.course_name;
+          const courseStatus = getCourseStatus(course.course_id);
 
           return (
             <Box
-              key={courseId}
+              key={course.course_id}
               p={4}
               bg={itemBg}
               borderWidth="1px"
@@ -68,13 +95,13 @@ const Grades: React.FC = () => {
             >
               <Flex justify="space-between" alignItems="center">
                 <Text fontSize="lg" fontWeight="bold" color={textColor}>
-                  {course?.courseName || "Unknown Course"}
+                  {courseName || "Unknown Course"}
                 </Text>
                 <Text fontSize="sm" color="gray.500">
-                  {courseStatus || "Not Started"}
+                  {courseStatus}
                 </Text>
               </Flex>
-              {index < userDegree.courses.length - 1 && <Divider mt={4} />}
+              {degree && index < degree.curriculum.length - 1 && <Divider mt={4} />}
             </Box>
           );
         })}
